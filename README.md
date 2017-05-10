@@ -68,3 +68,21 @@ const hello = `<div class="greeting">${config.greeting}</div>`
 module.exports = hello;
 
 ```
+
+## Environment Variables
+Inspired by the [config](https://www.npmjs.com/package/config) module, you can define environment variables to override specific configurations. If you're running on a server, isomorphic-config will check for the existance of a given environment variable and replace the config associated to it with it's value.
+
+To enable custom environment variables, create a configuration file, custom-environment-variables.json mapping the environment variable names into your configuration structure. For example:
+```
+{
+  "server": {
+    "port": "PORT"
+  },
+  "client": {
+    "greeting": "GREETING"
+  }
+}
+```
+...would cause isomorphic-config to check for the environment variables PORT and GREETING. If they exist, they would override the values for server.port, and client.greeting in your configuration.
+
+
