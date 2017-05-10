@@ -1,0 +1,14 @@
+{
+  "name": "isomorphic-config-hello-example",
+  "version": "0.1.0",
+  "description": "An example application for isomorphic-config",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "author": "leanazulyoro",
+  "dependencies": {
+    "express": "^4.15.2",
+    "isomorphic-config": "^0.1.0"
+  }
+}
