@@ -1,0 +1,8 @@
+{
+  "server": {
+    "port": "PORT"
+  },
+  "client": {
+    "greeting": "GREETING"
+  }
+}

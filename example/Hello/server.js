@@ -1,8 +1,6 @@
-//const isomorphicConfig = require("isomorphic-config");
-//const clientConfig = isomorphicConfig.client;
-//const serverConfig = isomorphicConfig.server;
-const clientConfig = {"greeting": "Alooo!"};
-const serverConfig = {"port": 3000};
+const isomorphicConfig = require("isomorphic-config");
+const clientConfig = isomorphicConfig.client;
+const serverConfig = isomorphicConfig.server;
 
 const express = require('express');
 const server = express();

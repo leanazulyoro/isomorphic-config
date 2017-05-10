@@ -9,6 +9,6 @@
   "author": "leanazulyoro",
   "dependencies": {
     "express": "^4.15.2",
-    "isomorphic-config": "^0.1.0"
+    "isomorphic-config": "^0.1.1"
   }
 }
