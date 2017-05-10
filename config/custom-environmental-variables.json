@@ -1,0 +1,8 @@
+{
+  "server": {
+    "someServerConfig": "SOME_SERVER_CONFIG"
+  },
+  "client": {
+    "someClientConfig": "SOME_CLIENT_CONFIG"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "server": {
+    "someServerConfig": true
+  },
+  "client": {
+    "someClientConfig": true
+  }
+}
