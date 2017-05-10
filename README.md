@@ -58,6 +58,9 @@ server.listen(serverConfig.port, function () {
     console.log(`Example app listening on port ${serverConfig.port}!`);
 });
 
+```
+
+```
 // Hello component (Hello.js):
 const isomorphicConfig = require("isomorphic-config");
 const config = isomorphicConfig.client;
