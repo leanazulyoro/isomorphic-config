@@ -19,5 +19,9 @@
     "envs"
   ],
   "author": "leanazulyoro",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/leanazulyoro/isomorphic-config.git"
+  }
 }
