@@ -10,7 +10,7 @@ npm install --save isomorphic-config
 ### From server
 
 Just import and use it, isomorphic-config will make use of server side capabilities to read a configuration file and retrieve the configurations in it.
-```
+```javascript
 const isomorphicConfig = require("isomorphic-config");
 const config = isomorphicConfig.server;
 const express =  require("express");
@@ -30,7 +30,7 @@ server.listen(config.port, (err) => {
 In order to use the config in a client app, you would need to expose it in a global variable ("CONFIG") from the server initial render.
 Isomorphic-config will detect it and retrieve it (see the "Hello" example)
 
-```
+```javascript
 // server initial render (server.js)
 const isomorphicConfig = require("isomorphic-config");
 
@@ -62,7 +62,7 @@ server.listen(isomorphicConfig.server.port, function () {
 
 ```
 
-```
+```javascript
 // Hello component (Hello.js):
 const isomorphicConfig = require("isomorphic-config");
 const config = isomorphicConfig.client;
@@ -75,7 +75,7 @@ module.exports = hello;
 Inspired by the [config](https://www.npmjs.com/package/config) module, you can define environment variables to override specific configurations. If you're running on a server, isomorphic-config will check for the existance of a given environment variable and replace the config associated to it with it's value.
 
 To enable custom environment variables, create a configuration file, custom-environment-variables.json mapping the environment variable names into your configuration structure. For example:
-```
+```json
 {
   "server": {
     "port": "PORT"
