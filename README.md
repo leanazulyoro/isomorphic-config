@@ -7,9 +7,10 @@ npm install --save isomorphic-config
 ```
 
 ## Usage
-### From server
+First of all, you need to create a "config" directory in the root of your project and add a "default.json" file in it with the settings required by your app.
 
-Just import and use it, isomorphic-config will make use of server side capabilities to read a configuration file and retrieve the configurations in it.
+### From server
+Just import and use it, isomorphic-config will make use of server side capabilities to read the configuration file ("/config/default.json") and retrieve the configurations in it.
 ```javascript
 const isomorphicConfig = require("isomorphic-config");
 const config = isomorphicConfig.server;
@@ -27,11 +28,9 @@ server.listen(config.port, (err) => {
 ```
 
 ### From client
-In order to use the config in a client app, you would need to expose it in a global variable ("CONFIG") from the server initial render.
-Isomorphic-config will detect it and retrieve it (see the "Hello" example)
-
+In order to use the config in a client app, you would need to expose it in a global variable ("CONFIG") from the server initial render, for later use in the app (see the "Hello" example).
+##### server initial render (server.js)
 ```javascript
-// server initial render (server.js)
 const isomorphicConfig = require("isomorphic-config");
 
 const express = require('express');
@@ -61,9 +60,8 @@ server.listen(isomorphicConfig.server.port, function () {
 });
 
 ```
-
+##### Hello component (Hello.js)
 ```javascript
-// Hello component (Hello.js):
 const isomorphicConfig = require("isomorphic-config");
 const config = isomorphicConfig.client;
 const hello = `<div class="greeting">${config.greeting}</div>`
@@ -74,7 +72,7 @@ module.exports = hello;
 ## Environment Variables
 Inspired by the [config](https://www.npmjs.com/package/config) module, you can define environment variables to override specific configurations. If you're running on a server, isomorphic-config will check for the existance of a given environment variable and replace the config associated to it with it's value.
 
-To enable custom environment variables, create a configuration file, custom-environment-variables.json mapping the environment variable names into your configuration structure. For example:
+To enable custom environment variables, create a configuration file, custom-environment-variables.json (and place it in the "config") directory mapping the environment variable names into your configuration structure. For example:
 ```json
 {
   "server": {
