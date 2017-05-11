@@ -1,11 +1,12 @@
 const isomorphicConfig = require("isomorphic-config");
-const clientConfig = isomorphicConfig.client;
-const serverConfig = isomorphicConfig.server;
 
 const express = require('express');
 const server = express();
 const hello = require("./Hello.js");
 
+// You would be wise to only expose to the client non-sensitive configuration.
+// It's a good idea to keep all client configurations in a "client" key and only expose that:
+const clientConfig = {client: isomorphicConfig.client};
 server.get('/', function (req, res) {
     res.send(
         `<!DOCTYPE html>
@@ -16,10 +17,11 @@ server.get('/', function (req, res) {
            </head>
            <body>
                ${hello}
+               <script>alert(CONFIG.client.greeting);</script>
            </body>
         </html>`
     );
 });
-server.listen(serverConfig.port, function () {
-    console.log(`Example app listening on port ${serverConfig.port}!`);
+server.listen(isomorphicConfig.server.port, function () {
+    console.log(`Example app listening on port ${isomorphicConfig.server.port}!`);
 });
