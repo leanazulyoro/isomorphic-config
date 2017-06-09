@@ -85,4 +85,8 @@ To enable custom environment variables, create a configuration file, custom-envi
 ```
 ...would cause isomorphic-config to check for the environment variables PORT and GREETING. If they exist, they would override the values for server.port, and client.greeting in your configuration.
 
+## Why use it?
+to centralize the way configurations are requested throughout your isomorphic application. The [config](https://www.npmjs.com/package/config) works only on server side because it uses file system to read a config file. Isomorphic Config does the same but also attemps to read the configuration from a client Global variable.
+Also, unlike [config](https://www.npmjs.com/package/config), it only supports json format, so code is more straight-foward and has less dependencies.
+
 
