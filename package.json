@@ -1,6 +1,6 @@
 {
   "name": "isomorphic-config",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A configuration manager for isomorphic applications",
   "main": "lib/config.js",
   "scripts": {
